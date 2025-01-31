@@ -1,0 +1,24 @@
+1. Version 1 (rHpy_claude_script.py):
+- Basic implementation that preserves residue order using string dtype for Residue_number
+- Single output file per input file with all chains combined
+- Uses standard pandas groupby with reset_index()
+
+2. Version 2 (rHpy_claude_script_2.py):
+- Very similar to Version 1
+- Main difference is the output directory name ("Mean_rHPy_values_2" instead of "Mean_rHPy_values")
+- Otherwise functionally identical to Version 1
+
+3. Version 3 (PDB rHPy Mean Calculator with Preserved Order and Chain Separation.py):
+Most advanced version with several key improvements:
+- Processes each chain separately using a chain-by-chain approach
+- Creates separate output files for each chain (filename includes chain identifier)
+- Better order preservation by:
+  - Using ordered_residues specific to each chain
+  - Merging with chain-specific results
+  - Maintaining explicit column order throughout
+- Saves results in "Mean_rHPy_values_3" directory
+- More organized error handling and progress reporting per chain
+
+The main evolution across these scripts is:
+- V1 → V2: Minimal changes (mainly directory naming)
+- V2 → V3: Major improvements in chain handling and organization
